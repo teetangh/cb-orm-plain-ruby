@@ -1,0 +1,5 @@
+test:
+  connection_string: couchbase://localhost
+  bucket: travel-sample
+  username: kaustav
+  password: password

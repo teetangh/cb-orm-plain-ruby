@@ -1,0 +1,95 @@
+GIT
+  remote: https://github.com/doctolib/couchbase-orm
+  revision: dc964b94f56145485bda73846dae4766f0adbd9c
+  specs:
+    couchbase-orm (2.0.0)
+      activemodel (>= 5.2)
+      couchbase (>= 3.4.2)
+      json-schema (>= 3)
+      radix (~> 2.2)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activemodel (7.1.3.3)
+      activesupport (= 7.1.3.3)
+    activesupport (7.1.3.3)
+      base64
+      bigdecimal
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      connection_pool (>= 2.2.5)
+      drb
+      i18n (>= 1.6, < 2)
+      minitest (>= 5.1)
+      mutex_m
+      tzinfo (~> 2.0)
+    addressable (2.8.6)
+      public_suffix (>= 2.0.2, < 6.0)
+    base64 (0.2.0)
+    bigdecimal (3.1.8)
+    concurrent-ruby (1.2.3)
+    connection_pool (2.4.1)
+    couchbase (3.5.1)
+      grpc (~> 1.59)
+    couchbase (3.5.1-arm64-darwin-22)
+      grpc (~> 1.59)
+    couchbase (3.5.1-x86_64-darwin-20)
+      grpc (~> 1.59)
+    couchbase (3.5.1-x86_64-linux)
+      grpc (~> 1.59)
+    couchbase (3.5.1-x86_64-linux-musl)
+      grpc (~> 1.59)
+    drb (2.2.1)
+    google-protobuf (3.25.3)
+    google-protobuf (3.25.3-aarch64-linux)
+    google-protobuf (3.25.3-arm64-darwin)
+    google-protobuf (3.25.3-x86-linux)
+    google-protobuf (3.25.3-x86_64-darwin)
+    google-protobuf (3.25.3-x86_64-linux)
+    googleapis-common-protos-types (1.14.0)
+      google-protobuf (~> 3.18)
+    grpc (1.63.0)
+      google-protobuf (~> 3.25)
+      googleapis-common-protos-types (~> 1.0)
+    grpc (1.63.0-aarch64-linux)
+      google-protobuf (~> 3.25)
+      googleapis-common-protos-types (~> 1.0)
+    grpc (1.63.0-arm64-darwin)
+      google-protobuf (~> 3.25)
+      googleapis-common-protos-types (~> 1.0)
+    grpc (1.63.0-x86-linux)
+      google-protobuf (~> 3.25)
+      googleapis-common-protos-types (~> 1.0)
+    grpc (1.63.0-x86_64-darwin)
+      google-protobuf (~> 3.25)
+      googleapis-common-protos-types (~> 1.0)
+    grpc (1.63.0-x86_64-linux)
+      google-protobuf (~> 3.25)
+      googleapis-common-protos-types (~> 1.0)
+    i18n (1.14.5)
+      concurrent-ruby (~> 1.0)
+    json-schema (4.3.0)
+      addressable (>= 2.8)
+    minitest (5.23.0)
+    mutex_m (0.2.0)
+    public_suffix (5.0.5)
+    radix (2.2.1)
+    tzinfo (2.0.6)
+      concurrent-ruby (~> 1.0)
+
+PLATFORMS
+  aarch64-linux
+  arm64-darwin
+  arm64-darwin-22
+  ruby
+  x86-linux
+  x86_64-darwin
+  x86_64-darwin-20
+  x86_64-linux
+  x86_64-linux-musl
+
+DEPENDENCIES
+  couchbase-orm!
+
+BUNDLED WITH
+   2.5.3
