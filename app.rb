@@ -6,7 +6,7 @@ require_relative 'models/post'
 require_relative 'models/user'
 require_relative 'models/document'
 require_relative 'models/book'
-require_relative 'models/author'
+require_relative 'models/Author'
 require_relative 'models/comment'
 require_relative 'models/task'
 require_relative 'models/pubmag'
@@ -20,6 +20,7 @@ require_relative 'models/TeacherStudent'
 require_relative 'models/N1QLTest'
 require_relative 'models/CarParts'
 require_relative 'models/Space'
+require_relative 'models/ProductImageCategory'
 
 # # Creating a new post
 # post = Post.create(title: 'My First Post', content: 'Hello, world!')

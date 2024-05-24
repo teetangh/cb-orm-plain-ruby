@@ -1,7 +1,7 @@
 # Load the model
 require_relative 'app'
 
-Author.all.each(&:destroy)
+Author.where(active: false).delete_all
 
 # Create new authors
 author1 = Author.new(name: 'John Doe', age: 30, active: true)

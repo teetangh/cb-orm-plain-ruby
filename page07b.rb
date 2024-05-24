@@ -5,7 +5,8 @@ require 'securerandom'
 puts "Records count before deletion: #{N1QLTest.count}"
 
 # Delete all records
-N1QLTest.all.each(&:destroy)
+# N1QLTest.all.each(&:destroy)
+N1QLTest.delete_all
 
 # Output the count of records after deletion
 puts "Records count after deletion: #{N1QLTest.count}"
@@ -59,36 +60,36 @@ end
 
 # Query by custom rating
 docs = N1QLTest.by_custom_rating.collect { |ob| ob.name }
-puts "By custom rating #{docs}"
+puts "By custom rating #{docs.count}"
 
 # Query by name
 docs = N1QLTest.by_name(key: 'John').collect { |ob| ob.name }
-puts "By name #{docs}"
+puts "By name #{docs.count}"
 
 # Query by lastname
 docs = N1QLTest.by_lastname(key: 'Doe').collect { |ob| ob.name }
-puts "By lastname #{docs}"
+puts "By lastname #{docs.count}"
 
 # Query by rating emit
 docs = N1QLTest.by_rating_emit(key: 1).collect { |ob| ob.name }
-puts "By rating emit #{docs}"
+puts "By rating emit #{docs.count}"
 
 # Query by custom rating values
 docs = N1QLTest.by_custom_rating_values(key: [[1, 2]]).collect { |ob| ob.name }
-puts "By custom rating values #{docs}"
+puts "By custom rating values #{docs.count}"
 
 # Query by rating reverse
 docs = N1QLTest.by_rating_reverse(key: 1).collect { |ob| ob.name }
-puts "By rating reverse #{docs}"
+puts "By rating reverse #{docs.count}"
 
 # Query by rating without docs
 docs = N1QLTest.by_rating_without_docs(key: 1)
-puts "By rating without docs #{docs}"
+puts "By rating without docs #{docs.count}"
 
 # Query using index_n1ql
 docs = N1QLTest.find_by_rating(2).collect { |ob| ob.name }
-puts "By index_n1ql #{docs}"
+puts "By index_n1ql #{docs.count}"
 
 # Query using index_n1ql
 docs = N1QLTest.by_rating.to_a.collect { |ob| ob.name }
-puts "By index_n1ql #{docs}"
+puts "By index_n1ql #{docs.count}"

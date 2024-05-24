@@ -17,4 +17,6 @@ class User < CouchbaseOrm::Base
 
   attribute :created_at, :datetime
   attribute :updated_at, :datetime
+
+  alias contact email
 end
