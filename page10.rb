@@ -1,4 +1,13 @@
 require_relative "app"
+require 'securerandom'
+
+Soldier.delete_all
+
+# Create 10 random soldiers
+10.times do
+  solder_i = Soldier.create(name: SecureRandom.hex(10), status: rand(1..3))
+  puts "Soldier created: #{solder_i.to_json}"
+end
 
 # Create a new soldier
 soldier = Soldier.new(name: 'John Doe')
@@ -6,7 +15,7 @@ puts "Soldier status: #{soldier.status}"  # Output: "Soldier status: active"
 soldier.save
 
 # Query soldiers by status
-active_soldiers = Soldier.where(status: :active)
+active_soldiers = Soldier.where(status: 1)
 puts "Active soldiers: #{active_soldiers.map(&:name)}"  # Output: "Active soldiers: ['John Doe']"
 
 # Change the status of a soldier

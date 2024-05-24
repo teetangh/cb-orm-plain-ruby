@@ -12,12 +12,9 @@ class User < CouchbaseOrm::Base
   attribute :updated_at, :datetime
   attribute :appointment_time, :time
   attribute :hobbies, :array, type: :string
-  # attribute :metadata, :hash
+  attribute :metadata, type: Hash
   attribute :avatar, :binary
 
   attribute :created_at, :datetime
   attribute :updated_at, :datetime
-
-  self.ignored_properties = [:email]
-  self.properties_always_exists_in_document = true
 end

@@ -11,7 +11,7 @@ user.birth_date = Date.new(1995, 1, 1)
 user.created_at = Time.now
 user.appointment_time = Time.new(2022, 12, 31, 10, 30)
 user.hobbies = ['Reading', 'Swimming', 'Cycling']
-# user.metadata = { 'key1' => 'value1', 'key2' => 'value2' }
+user.metadata = { 'key1' => 'value1', 'key2' => 'value2' }
 user.avatar = false
 user.save
 
@@ -24,7 +24,7 @@ puts "birth_date: #{user.birth_date} (#{user.birth_date.class})"
 puts "created_at: #{user.created_at} (#{user.created_at.class})"
 puts "appointment_time: #{user.appointment_time} (#{user.appointment_time.class})"
 puts "hobbies: #{user.hobbies} (#{user.hobbies.class})"
-# puts "metadata: #{user.metadata} (#{user.metadata.class})"
+puts "metadata: #{user.metadata} (#{user.metadata.class})"
 puts "avatar: #{user.avatar} (#{user.avatar.class})"
 
 puts "created_at: #{user.created_at} (#{user.created_at.class})"

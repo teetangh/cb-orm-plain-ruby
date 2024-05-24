@@ -17,6 +17,9 @@ require_relative 'models/Soldier'
 require_relative 'models/Bank'
 require_relative 'models/Writer'
 require_relative 'models/TeacherStudent'
+require_relative 'models/N1QLTest'
+require_relative 'models/CarParts'
+require_relative 'models/Space'
 
 # # Creating a new post
 # post = Post.create(title: 'My First Post', content: 'Hello, world!')

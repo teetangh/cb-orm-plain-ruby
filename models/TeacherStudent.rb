@@ -13,5 +13,5 @@ class Student < CouchbaseOrm::Base
 
   belongs_to :teacher, class_name: 'Teacher', foreign_key: :teacher_id
 
-  validates_presence_of :name, :grade
+  validates_presence_of :name, :grade, :teacher_id
 end

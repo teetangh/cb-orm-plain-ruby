@@ -1,6 +1,8 @@
 # Load the model
 require_relative 'app'
 
+Task.all.each(&:destroy)
+
 # Create a new task
 task1 = Task.new(title: 'Task 1', description: 'Description of Task 1')
 task1.save
