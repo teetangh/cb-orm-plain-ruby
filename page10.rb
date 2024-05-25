@@ -9,6 +9,8 @@ Soldier.delete_all
   puts "Soldier created: #{solder_i.to_json}"
 end
 
+Soldier.all.each(&:destroy)
+
 # Create a new soldier
 soldier = Soldier.new(name: 'John Doe')
 puts "Soldier status: #{soldier.status}"  # Output: "Soldier status: active"
@@ -44,6 +46,11 @@ soldier2.save
 soldier3 = Soldier.new(name: 'Alice Jones')
 soldier3.status = :retired
 soldier3.save
+
+# Print the soldiers
+puts "Soldier 1: #{soldier1.name}, Status: #{soldier1.status}"
+puts "Soldier 2: #{soldier2.name}, Status: #{soldier2.status}"
+puts "Soldier 3: #{soldier3.name}, Status: #{soldier3.status}"
 
 # Query soldiers by status
 active_soldiers = Soldier.where(status: :active)
