@@ -19,6 +19,7 @@ puts 'Species: '
 species.each { |s| puts "- #{s.name}" }
 # Autosave
 planet = Planet.find(planet.id)
+
 planet.name = 'Mars'
 planet.species.first.name = 'Martian'
 planet.save

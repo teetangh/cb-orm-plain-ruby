@@ -1,3 +1,4 @@
+
 require_relative 'app'
 require 'securerandom'
 
@@ -8,17 +9,19 @@ puts "Records count before deletion: #{N1QLTest.count}"
 # N1QLTest.all.each(&:destroy)
 N1QLTest.delete_all
 
+N1QLTest.ensure_design_document!
+
 # Output the count of records after deletion
 puts "Records count after deletion: #{N1QLTest.count}"
 
 def create_small_data
-  N1QLTest.create!(name: 'John', lastname: 'Doe', rating: :awesome)
-  N1QLTest.create!(name: 'Jane', lastname: 'Smith', rating: :good)
-  N1QLTest.create!(name: 'Bob', lastname: 'Johnson', rating: :okay)
-  N1QLTest.create!(name: 'Alice', lastname: 'Williams', rating: :bad)
-  N1QLTest.create!(name: 'Mark', lastname: 'Davis', rating: :awesome)
-  N1QLTest.create!(name: 'Sue', lastname: 'Brown', rating: :good)
-  N1QLTest.create!(name: 'Tom', lastname: 'Miller', rating: :okay)
+  N1QLTest.create!(name: 'John', lastname: 'Doe', rating: :awesome, country: 'USA')
+  N1QLTest.create!(name: 'Jane', lastname: 'Smith', rating: :good, country: 'Canada')
+  N1QLTest.create!(name: 'Bob', lastname: 'Johnson', rating: :okay, country: 'USA')
+  N1QLTest.create!(name: 'Alice', lastname: 'Williams', rating: :bad, country: 'Australia')
+  N1QLTest.create!(name: 'Mark', lastname: 'Davis', rating: :awesome, country: 'USA')
+  N1QLTest.create!(name: 'Sue', lastname: 'Brown', rating: :good, country: 'Canada')
+  N1QLTest.create!(name: 'Tom', lastname: 'Miller', rating: :okay, country: 'USA')
 end
 
 def create_big_data
@@ -27,10 +30,12 @@ def create_big_data
       name: SecureRandom.hex(10),
       lastname: SecureRandom.hex(10),
       rating: rand(1..5),
+      country: ['USA', 'Canada', 'Australia'].sample
     )
     puts "Record created: #{i}" if (i % 10_000).zero?
   end
 end
+
 def count_docs(docs)
   docs ? docs.count : 'Not created'
 end
@@ -69,6 +74,13 @@ puts "By name #{docs.count}"
 # Query by lastname
 docs = N1QLTest.by_lastname(key: 'Doe').collect { |ob| ob.name }
 puts "By lastname #{docs.count}"
+
+# docs = N1QLTest.by_name_and_rating(name: 'John', rating: 'awesome')
+# puts "By name and rating #{count_docs(docs)}"
+
+# Query by country
+docs = N1QLTest.by_country(key: 'USA').collect { |ob| ob.name }
+puts "By country #{docs.count}"
 
 # Query by rating emit
 docs = N1QLTest.by_rating_emit(key: 1).collect { |ob| ob.name }

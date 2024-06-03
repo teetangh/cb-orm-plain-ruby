@@ -18,7 +18,6 @@ company_employees = company.employees
 company_customers = company.customers
 company = Company.where(name: 'ABC Inc.').first
 
-company = Company.where(name: 'ABC Inc.').first
 # Print the results
 puts "company #{company.employees.to_json} #{company.strict_loading?}"
 # puts "Employees of #{company.to_json}:"

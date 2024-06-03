@@ -21,6 +21,7 @@ require_relative 'models/N1QLTest'
 require_relative 'models/CarParts'
 require_relative 'models/Space'
 require_relative 'models/ProductImageCategory'
+require_relative 'models/Factory'
 
 # # Creating a new post
 # post = Post.create(title: 'My First Post', content: 'Hello, world!')

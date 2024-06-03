@@ -1,4 +1,5 @@
 require_relative "app"
+
 require 'base64'
 require 'logger'
 
@@ -11,7 +12,6 @@ def expect_serialized_attributes(bank)
   serialized_attrs.each do |key, value|
     puts "#{key}: #{value}"
   end
-
   json_attrs = JSON.parse(bank.to_json)
   puts "\nAttributes from JSON:"
   json_attrs.each do |key, value|
